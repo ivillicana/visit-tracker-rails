@@ -15,6 +15,7 @@ class PeopleController < ApplicationController
 
  def new
    @person = Person.new
+   @person.visits.build(notes: "", visit_type: "", visit_date: Date.today, visit_time: Time.now)
  end
 
  def create
@@ -33,6 +34,6 @@ class PeopleController < ApplicationController
  private
 
  def people_params
-   params.require(:person).permit(:name, :house_number, :apt, :street, :city, :state, :country, :notes, :email, :phone)
+   params.require(:person).permit(:name, :house_number, :apt, :street, :city, :state, :country, :notes, :email, :phone, visits_attributes: [:notes, :visit_date, :visit_time, :visit_type])
  end
 end
