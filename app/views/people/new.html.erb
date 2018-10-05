@@ -85,6 +85,36 @@
           </div>
         </div>
 
+        <div class="border p-2 mb-2">
+        <h5>Visit Notes</h5>
+        <%= f.fields_for :visits do |visit| %>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <%= f.label :visit_type, "Visit Type" %>
+              <%= visit.select :visit_type, [['Initial Visit', 'Initial'], ['Return Visit', 'Return']], class: "form-control" %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <%= f.label :visit_date, "Visit Date" %>
+              <%= visit.date_field :visit_date, class: "form-control" %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <%= f.label :visit_notes, "Visit Notes" %>
+              <%= visit.text_area :notes, class: "form-control" %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+        </div>
+
         <div class="row">
           <div class="col">
             <div class="form-group">
