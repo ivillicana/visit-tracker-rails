@@ -23,6 +23,13 @@ class PeopleController < ApplicationController
   redirect_to user_person_path(@person.user, @person.id) if @person.save
  end
 
+ def destroy
+   person = Person.find_by(id: params[:id])
+   person.destroy
+   flash[:notice] = "Successfully deleted call"
+   redirect_to user_people_path(current_user)
+ end
+
  private
 
  def people_params
