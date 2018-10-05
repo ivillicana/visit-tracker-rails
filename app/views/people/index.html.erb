@@ -1,19 +1,19 @@
-<div class="container">
+<div class="container-fluid">
 
   <div class="row">
-    <div class="col">
-      <h2>My Visits/Calls</h2>
+    <div class="col text-center">
+      <h1>My Visits/Calls</h1>
     </div>
   </div>
 
-  <div class="row">
+  <div class="row my-3">
     <div class="col">
       <button type="button" class="btn btn-outline-primary"><%= link_to 'New Call', new_user_person_path(@user) %></button>
     </div>
   </div>
 
   <div class="row">
-    <div class="col">
+    <div class="col-sm-5">
       <div class="list-group">
         <% @people.each do |person| %>
           <%= link_to person.name, user_person_path(@user, person), class: "list-group-item list-group-item-action"%>

@@ -25,7 +25,7 @@
   <% end %>
 
   <% if !(@person.email == nil || @person.email == "") %>
-    <div class="row">
+    <div class="row mb-3">
       <div class="col">
         <h5>Email</h5>
         <%= @person.email %>
@@ -34,12 +34,20 @@
   <% end %>
 
   <% if !(@person.notes == nil || @person.notes == "") %>
-    <div class="row">
+    <div class="row mb-3">
       <div class="col">
         <h5>Notes</h5>
         <%= @person.notes %>
       </div>
     </div>
   <% end %>
+
+  <div class="row mb-3">
+    <div class="col">
+      <%= form_tag("/users/#{@user.id}/people/#{@person.id}", method: :delete) do %>
+        <%= submit_tag "Delete", class: "btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
 
 </div>
