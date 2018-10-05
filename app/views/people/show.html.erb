@@ -1,1 +1,45 @@
-user person show page
+<div class="container">
+
+  <div class="row mb-3">
+    <div class="col">
+      <h2><%= @person.name %></h2>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col">
+      <div>
+        <h5>Address</h5>
+        <%= person_address(@person) %>
+      </div>
+    </div>
+  </div>
+
+  <% if !(@person.phone == nil || @person.phone == "") %>
+    <div class="row mb-3">
+      <div class="col">
+        <h5>Telephone</h5>
+        <%= @person.phone %>
+      </div>
+    </div>
+  <% end %>
+
+  <% if !(@person.email == nil || @person.email == "") %>
+    <div class="row">
+      <div class="col">
+        <h5>Email</h5>
+        <%= @person.email %>
+      </div>
+    </div>
+  <% end %>
+
+  <% if !(@person.notes == nil || @person.notes == "") %>
+    <div class="row">
+      <div class="col">
+        <h5>Notes</h5>
+        <%= @person.notes %>
+      </div>
+    </div>
+  <% end %>
+
+</div>
