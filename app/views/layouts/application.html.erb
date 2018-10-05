@@ -20,7 +20,7 @@
         <ul class="navbar-nav mr-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to 'Visits/Calls', people_path, class: "nav-link" %>
+            <%= link_to 'Visits/Calls', user_people_path(current_user), class: "nav-link" %>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Features</a>
