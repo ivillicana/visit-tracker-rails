@@ -23,10 +23,7 @@
             <%= link_to 'Visits/Calls', user_people_path(current_user), class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <%= link_to 'Settings', edit_user_registration_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "nav-link" %>
